@@ -6,8 +6,6 @@ Version:	0.1h
 Release:	1
 License:	GPL
 Group:		Applications/System
-Group(de):	Applikationen/System
-Group(pl):	Aplikacje/System
 Source0:	http://www.stud.uni-hannover.de/user/76201/gpart/%{name}-%{version}.tar.gz
 Patch0:		%{name}-Makefile.patch
 URL:		http://home.pages.de/~michab/gpart/
