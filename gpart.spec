@@ -7,6 +7,7 @@ Release:	3
 License:	GPL
 Group:		Applications/System
 Source0:	http://www.stud.uni-hannover.de/user/76201/gpart/%{name}-%{version}.tar.gz
+# Source0-md5:	ee3a2d2dde70bcf404eb354b3d1ee6d4
 Patch0:		%{name}-Makefile.patch
 Patch1:		%{name}-ntfs-ppc.patch
 Patch2:		%{name}-errno.patch
