@@ -3,7 +3,7 @@ Summary(pl):	Odgaduje zawarto¶æ i odzyskuje uszkodzony Master Boot Record
 Summary(pt):	Adivinha e recupera um Master Boot Record danificado
 Name:		gpart
 Version:	0.1h
-Release:	3
+Release:	4
 License:	GPL
 Group:		Applications/System
 Source0:	http://www.stud.uni-hannover.de/user/76201/gpart/%{name}-%{version}.tar.gz
@@ -11,6 +11,7 @@ Source0:	http://www.stud.uni-hannover.de/user/76201/gpart/%{name}-%{version}.tar
 Patch0:		%{name}-Makefile.patch
 Patch1:		%{name}-ntfs-ppc.patch
 Patch2:		%{name}-errno.patch
+Patch3:		ftp://ftp.namesys.com/pub/misc-patches/gpart-0.1h-reiserfs-3.6.patch.gz
 URL:		http://www.stud.uni-hannover.de/user/76201/gpart/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -35,6 +36,7 @@ ela esteja danificada.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p2
 
 %build
 %{__make} OPT="%{rpmcflags}"
