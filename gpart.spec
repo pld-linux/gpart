@@ -33,7 +33,7 @@ ela esteja danificada.
 %patch0 -p1
 
 %build
-%{__make} OPT="%{?debug:-O0 -g}%{!?debug:$RPM_OPT_FLAGS}"
+%{__make} OPT="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
