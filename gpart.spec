@@ -2,8 +2,8 @@ Summary:	Guesses and recovers damaged Master Boot Records
 Summary(pl):	Odgaduje zawarto¶æ i odzyskuje uszkodzony Master Boot Record
 Summary(pt):	Adivinha e recupera um Master Boot Record danificado
 Name:		gpart
-Version:	0.1g
-Release:	2
+Version:	0.1h
+Release:	1
 License:	GPL
 Group:		Applications/System
 Group(de):	Applikationen/System
