@@ -11,7 +11,7 @@ Source0:	http://www.stud.uni-hannover.de/user/76201/gpart/%{name}-%{version}.tar
 Patch0:		%{name}-Makefile.patch
 Patch1:		%{name}-ntfs-ppc.patch
 Patch2:		%{name}-errno.patch
-URL:		http://home.pages.de/~michab/gpart/
+URL:		http://www.stud.uni-hannover.de/user/76201/gpart/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_sbindir	/sbin
