@@ -43,13 +43,11 @@ install -d $RPM_BUILD_ROOT{%{_mandir}/man8,%{_sbindir}}
 install src/gpart $RPM_BUILD_ROOT%{_sbindir}/
 install man/gpart.8 $RPM_BUILD_ROOT%{_mandir}/man8
 
-gzip -9nf Changes README
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc Changes README
 %attr(755,root,root) %{_sbindir}/gpart
 %{_mandir}/man8/*
