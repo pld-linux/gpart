@@ -3,13 +3,14 @@ Summary(es):	Guesses and recovers damaged Master Boot Records
 Summary(pt):	Adivinha e recupera um Master Boot Record danificado
 Name:		gpart
 Version:	0.1g
-Release:	1
+Release:	2
 License:	GPL
-Group:		Utilities/System
-Group(pl):	Narzêdzia/System
+Group:		Applications/System
+Group(de):	Applikationen/System
+Group(pl):	Aplikacje/System
 Source0:	http://www.stud.uni-hannover.de/user/76201/gpart/%{name}-%{version}.tar.gz
-Patch0:		gpart-Makefile.patch
-URL:		http://home.pages.de/~michab/gpart
+Patch0:		%{name}-Makefile.patch
+URL:		http://home.pages.de/~michab/gpart/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_sbindir	/sbin
@@ -32,20 +33,19 @@ ela esteja danificada.
 %patch0 -p1
 
 %build
-%{__make} LDFLAGS="-s" OPT="$RPM_OPT_FLAGS"
+%{__make} OPT="%{!?debug:$RPM_OPT_FLAGS}%{?debug:-O -g}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_mandir}/man8,%{_sbindir}}
 
-install -s src/gpart $RPM_BUILD_ROOT%{_sbindir}/
+install src/gpart $RPM_BUILD_ROOT%{_sbindir}/
 install man/gpart.8 $RPM_BUILD_ROOT%{_mandir}/man8
 
-gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man8/* \
-	Changes README
+gzip -9nf Changes README
 
 %clean
-rm -fr $RPM_BUILD_ROOT
+rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
