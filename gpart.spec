@@ -1,6 +1,6 @@
 Summary:	Guesses and recovers damaged Master Boot Records
-Summary(pl):	Odgaduje zawarto¶æ i odzyskuje uszkodzony Master Boot Record
-Summary(pt):	Adivinha e recupera um Master Boot Record danificado
+Summary(pl.UTF-8):   Odgaduje zawartoÅ›Ä‡ i odzyskuje uszkodzony Master Boot Record
+Summary(pt.UTF-8):   Adivinha e recupera um Master Boot Record danificado
 Name:		gpart
 Version:	0.1h
 Release:	4
@@ -22,14 +22,14 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Gpart is a small tool which tries to guess what partitions are on a PC
 type harddisk in case the primary partition table was damaged.
 
-%description -l pl
-Gpart jest niewielkim narzêdziem próbuj±cym odgadn±æ jakie partycje
-znajduj± siê na twardym dysku. Znajduje on zastosowanie w przypadku
+%description -l pl.UTF-8
+Gpart jest niewielkim narzÄ™dziem prÃ³bujÄ…cym odgadnÄ…Ä‡ jakie partycje
+znajdujÄ… siÄ™ na twardym dysku. Znajduje on zastosowanie w przypadku
 uszkodzenia tablicy partycji.
 
-%description -l pt
-Gpart é uma pequena ferramenta que tenha adivinhar quais partições
-existem um disco rígido e tenta recuperar a tabela de partições caso
+%description -l pt.UTF-8
+Gpart Ã© uma pequena ferramenta que tenha adivinhar quais partiÃ§Ãµes
+existem um disco rÃ­gido e tenta recuperar a tabela de partiÃ§Ãµes caso
 ela esteja danificada.
 
 %prep
