@@ -1,6 +1,6 @@
 Summary:	Guesses and recovers damaged Master Boot Records
-Summary(pl.UTF-8):   Odgaduje zawartość i odzyskuje uszkodzony Master Boot Record
-Summary(pt.UTF-8):   Adivinha e recupera um Master Boot Record danificado
+Summary(pl.UTF-8):	Odgaduje zawartość i odzyskuje uszkodzony Master Boot Record
+Summary(pt.UTF-8):	Adivinha e recupera um Master Boot Record danificado
 Name:		gpart
 Version:	0.1h
 Release:	4
