@@ -11,7 +11,9 @@ Source0:	http://www.stud.uni-hannover.de/user/76201/gpart/%{name}-%{version}.tar
 Patch0:		%{name}-Makefile.patch
 Patch1:		%{name}-ntfs-ppc.patch
 Patch2:		%{name}-errno.patch
-Patch3:		ftp://ftp.namesys.com/pub/misc-patches/gpart-0.1h-reiserfs-3.6.patch.gz
+# ftp://ftp.namesys.com/pub/misc-patches/
+Patch3:		gpart-0.1h-reiserfs-3.6.patch.gz
+# Patch3-md5:	ed479abcb1d7612669c4275a1c445085
 Patch4:		%{name}-x86_64.patch
 Patch5:		%{name}-l64seek.patch
 URL:		http://www.stud.uni-hannover.de/user/76201/gpart/
