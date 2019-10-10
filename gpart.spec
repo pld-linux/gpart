@@ -2,22 +2,15 @@ Summary:	Guesses and recovers damaged Master Boot Records
 Summary(pl.UTF-8):	Odgaduje zawartość i odzyskuje uszkodzony Master Boot Record
 Summary(pt.UTF-8):	Adivinha e recupera um Master Boot Record danificado
 Name:		gpart
-Version:	0.1h
-Release:	4
+Version:	0.3
+Release:	1
 License:	GPL
 Group:		Applications/System
-Source0:	http://www.stud.uni-hannover.de/user/76201/gpart/%{name}-%{version}.tar.gz
-# Source0-md5:	ee3a2d2dde70bcf404eb354b3d1ee6d4
-Patch0:		%{name}-Makefile.patch
-Patch1:		%{name}-ntfs-ppc.patch
-Patch2:		%{name}-errno.patch
-# ftp://ftp.namesys.com/pub/misc-patches/
-Patch3:		gpart-0.1h-reiserfs-3.6.patch.gz
-# Patch3-md5:	ed479abcb1d7612669c4275a1c445085
-Patch4:		%{name}-x86_64.patch
-Patch5:		%{name}-l64seek.patch
-Patch6:		%{name}-openmode.patch
-URL:		http://www.stud.uni-hannover.de/user/76201/gpart/
+Source0:	https://github.com/baruch/gpart/archive/%{version}.tar.gz
+# Source0-md5:	2d709068b5123198b3eb337f9d4686a8
+URL:		https://github.com/baruch/gpart/
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_sbindir	/sbin
@@ -38,29 +31,26 @@ ela esteja danificada.
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p1
-%patch2 -p1
-%patch3 -p2
-%patch4 -p1
-%patch5 -p1
-%patch6 -p1
 
 %build
-%{__make} OPT="%{rpmcflags}"
+%{__aclocal}
+%{__autoconf}
+%{__autoheader}
+%{__automake}
+
+%configure
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_mandir}/man8,%{_sbindir}}
 
-install src/gpart $RPM_BUILD_ROOT%{_sbindir}/
-install man/gpart.8 $RPM_BUILD_ROOT%{_mandir}/man8
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc Changes README
+%doc Changes README.md
 %attr(755,root,root) %{_sbindir}/gpart
-%{_mandir}/man8/*
+%{_mandir}/man8/gpart.8*
